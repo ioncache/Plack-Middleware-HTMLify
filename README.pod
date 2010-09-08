@@ -1,0 +1,30 @@
+=head1 NAME
+
+Plack::Middleware::HTMLify - Transforms a non-html document into html.
+
+=head1 SYNOPSIS
+
+    use Plack::Builder;
+
+    my $app = sub {
+        return [ 200, [ 'Content-Type' => 'text/plain' ], [ 'Hello Foo' ] ];
+    };
+
+    builder {
+        enable "HTMLify",
+            set_doctype    => "...", # html for the doctype
+            set_head       => "...", # html to include in <head>
+            set_body_start => "...", # html for the beginning of the <body>
+            set_body_end   => "..."; # html for the end of the <body>
+        $app;
+    };
+
+=head1 DESCRIPTION
+
+Used for transforming a non-html document into html.
+
+=head1 AUTHOR
+
+Mark Jubenville <ioncache@gmail.com>
+
+=cut
