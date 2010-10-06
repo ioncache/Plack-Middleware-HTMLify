@@ -1,1 +1,34 @@
-Transforms a non-html document into html.
+NAME
+    Plack::Middleware::HTMLify - Transform a non-html web page into html.
+
+VERSION
+    version 0.1.0
+
+SYNOPSIS
+        use Plack::Builder;
+
+        my $app = sub {
+            return [ 200, [ 'Content-Type' => 'text/plain' ], [ 'Hello Foo' ] ];
+        };
+
+        builder {
+            enable "HTMLify",
+                set_doctype    => "...", # html for the doctype
+                set_head       => "...", # html to include in <head>
+                set_body_start => "...", # html for the beginning of the <body>
+                set_body_end   => "..."; # html for the end of the <body>
+            $app;
+        };
+
+DESCRIPTION
+    Used for transforming a non-html web page into html.
+
+AUTHOR
+    Mark Jubenville <ioncache@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2010 by Mark Jubenville.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+

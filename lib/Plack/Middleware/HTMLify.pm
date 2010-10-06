@@ -7,8 +7,6 @@ use Plack::Util;
 use Plack::Util::Accessor
     qw( set_doctype set_head set_body_start set_body_end );
 
-our $VERSION = '0.01';
-
 __PACKAGE__->{'count'} = 0;
 
 sub call {
@@ -69,10 +67,6 @@ sub call {
 
 __END__
 
-=head1 NAME
-
-Plack::Middleware::HTMLify - Transforms a non-html document into html.
-
 =head1 SYNOPSIS
 
     use Plack::Builder;
@@ -92,10 +86,8 @@ Plack::Middleware::HTMLify - Transforms a non-html document into html.
 
 =head1 DESCRIPTION
 
-Used for transforming a non-html document into html.
-
-=head1 AUTHOR
-
-Mark Jubenville <ioncache@gmail.com>
+Used for transforming a non-html web page into html.
 
 =cut
+
+# ABSTRACT: Transform a non-html web page into html. 
