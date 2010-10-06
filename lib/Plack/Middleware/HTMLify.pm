@@ -22,11 +22,10 @@ sub call {
 
             return sub {
                 my $chunk = shift;
-                my $junk = shift;
                 if ( !defined $chunk ) {
                     __PACKAGE__->{'count'} = 0;
                     $chunk = qq[\n</body>\n</html>];
-                    $chunk = $self->set_body_end . $chunk
+                    $chunk = "\n" . $self->set_body_end . $chunk
                         if $self->set_body_end;
                     return $chunk;
                 }
@@ -86,8 +85,16 @@ __END__
 
 =head1 DESCRIPTION
 
-Used for transforming a non-html web page into html.
+Plack::Middleware::HTMLify is meant to be used to transform non-html web content
+into html.
+
+The ideas is that some content, such as "text/plain", you may want transformed
+into HTML for use with other middleware.
+
+=head1 SEE ALSO
+ 
+L<Plack>
 
 =cut
 
-# ABSTRACT: Transform a non-html web page into html. 
+# ABSTRACT: Plack::Middleware::Deflater - Transform a non-html page into html.  

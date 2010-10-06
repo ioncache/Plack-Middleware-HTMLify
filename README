@@ -1,5 +1,6 @@
 NAME
-    Plack::Middleware::HTMLify - Transform a non-html web page into html.
+    Plack::Middleware::HTMLify - Plack::Middleware::Deflater - Transform a
+    non-html page into html.
 
 VERSION
     version 0.1.0
@@ -21,7 +22,14 @@ SYNOPSIS
         };
 
 DESCRIPTION
-    Used for transforming a non-html web page into html.
+    Plack::Middleware::HTMLify is meant to be used to transform non-html web
+    content into html.
+
+    The ideas is that some content, such as "text/plain", you may want
+    transformed into HTML for use with other middleware.
+
+SEE ALSO
+    Plack
 
 AUTHOR
     Mark Jubenville <ioncache@gmail.com>
