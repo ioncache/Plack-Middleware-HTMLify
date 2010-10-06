@@ -88,8 +88,10 @@ __END__
 Plack::Middleware::HTMLify is meant to be used to transform non-html web content
 into html.
 
-The ideas is that some content, such as "text/plain", you may want transformed
-into HTML for use with other middleware.
+Use case:
+On CPAN, the 'source' link is delivered as 'text/plain'.  If you wanted to do
+some post-processing of this page to add syntax highlighting you would need the
+page to be set as 'text/html' and have some basic HTML formatting.
 
 =head1 SEE ALSO
  
@@ -97,4 +99,4 @@ L<Plack>
 
 =cut
 
-# ABSTRACT: Plack::Middleware::Deflater - Transform a non-html page into html.  
+# ABSTRACT: Transform a non-html page into html.  
